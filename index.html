@@ -1,23 +1,38 @@
-<body style="margin:0;">
+<body style="margin:0; overflow:hidden;">
 
-<div style="
+<style>
+/* ===== CROP SETTINGS (EDIT THESE) ===== */
+:root{
+  --left: -300px;   /* move page left/right */
+  --top: -200px;    /* move page up/down */
+  --zoom: 1.3;      /* zoom level */
+}
+/* ====================================== */
+
+.embed-container{
   width:100%;
   height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
   overflow:hidden;
-">
+  position:relative;
+}
 
+.embed-frame{
+  position:absolute;
+  top:var(--top);
+  left:var(--left);
+  width:120vw;
+  height:120vh;
+  border:none;
+  transform:scale(var(--zoom));
+  transform-origin:top left;
+}
+</style>
+
+<div class="embed-container">
   <iframe
-    src="https://learn.artweb.website.cdn.cloudflare.net/&?q=Geforce%20NOW"
-    style="
-      width:90%;
-      height:100%;
-      border:none;
-    ">
+    class="embed-frame"
+    src="https://learn.artweb.website.cdn.cloudflare.net/&?q=Geforce%20NOW">
   </iframe>
-
 </div>
 
 </body>
